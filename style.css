@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-family: "Inter", sans-serif;
+     -webkit-tap-highlight-color: transparent;
+}
+
+:root {
+     --primary-color: #25242a;
+     --secondary-color: #363636;
+}
+/* 
+body {
+     height: 100dvh;
+} */
+
+.defaultContainer {
+     display: flex;
+     flex-direction: column;
+}
+
+.header {
+     background-color: var(--primary-color);
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     gap: 1em;
+     padding: 1em;
+     color: white;
+}
+
+ul {
+     list-style: none;
+     display: flex;
+     gap: .7em;
+     flex-wrap: wrap;
+     justify-content: center;
+     align-items: center;
+}
+
+ul .a {
+     text-decoration: none;
+     color: white;
+     padding: .5em;
+     border-radius: .4em;
+     display: block;
+     transition: .3s;
+
+     &:hover {
+          background-color: var(--secondary-color);
+     }
+}
+
+.aside {
+     display: none;
+     padding: 1em;
+     background-color: var(--secondary-color);
+
+     & ul {
+          flex-direction: column;
+          gap: 0;
+     }
+
+     & .a {
+          width: 170px;
+          text-align: center;
+     }
+
+     & .a:hover {
+          background-color: var(--primary-color);
+     }
+}
+
+.navPC {
+     display: none;
+}
+
+.div {
+     width: 100%;
+}
+
+.div2 {
+     margin-top: 2em;
+}
+
+.title2-aside {
+     margin-bottom: 1em;
+}
+
+h1,
+.title2-aside {
+     color: white;
+}
+
+.div {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     padding: 0 .5em .4em;
+}
+
+.div-imgs {
+     display: none;
+}
+
+.title1,
+.title2,
+.title3 {
+     text-align: center;
+}
+
+.content1 {
+     margin-top: 1em;
+}
+
+.title3 {
+     margin-bottom: .5em;
+}
+
+main {
+     padding-top: 1em;
+}
+
+.footer {display: none;}
+
+@media screen and (width >= 48.75em) {
+     body {height: 100dvh;}
+
+     .gridContainer {
+          display: grid;
+          grid-template-columns: 250px 1fr 1fr;
+          grid-template-rows: 100px repeat(3, 1fr);
+     }
+
+     .navPC {
+          display: block;
+
+          & .a {
+               &:hover {
+                    text-decoration: underline;
+                    background-color: transparent;
+               }
+          }
+     }
+
+     .aside {
+          display: block;
+
+          & li {
+               border-bottom: 2px solid #ababab;
+               padding: .2em 0;
+               width: 100%;
+          }
+
+          & .a {
+               font-size: larger;
+               height: 8dvh;
+               text-align: end;
+               display: flex;
+               align-items: center;
+               justify-content: end;
+               width: 100%;
+               transition: .35s;
+
+               &:hover {
+                    background-color: transparent;
+                    padding-right: 1.5em;
+               }
+          }
+     }
+
+     .header {
+          justify-content: center;
+          align-items: end;
+          grid-column: 2 / -1;
+     }
+
+     .aside {
+          grid-column: 1 / 2;
+          grid-row: 1 / -1;
+     }
+
+     .main {
+          grid-column: 2 / -1;
+          grid-row: 2 / -1;
+          font-size: large;
+     }
+
+     .content2 {
+          margin-top: .6em;
+     }
+
+     .navMobile, h1 {
+          display: none;
+     }
+
+}
+
+@media screen and (width >= 62.5em) {
+     .gridContainer {
+          display: grid;
+          grid-template-columns: 1fr 3fr 1fr;
+          grid-template-rows: 100px 100px 1fr 100px;
+     }
+     
+     .header {
+          grid-column: 2 / -1;
+     }
+     
+     .aside {
+          grid-column: 2 / 1;
+          grid-row: 1 / 6;
+     }
+     
+     .main {
+          grid-column: 2 / -1;
+          font-size: large;
+          grid-row: 2 / -1;
+     }
+
+     .footer {
+          display: flex;
+          grid-column: 2 / -1;
+          background-color: rgb(0 0 128 / .5);
+          padding: 1em;
+          /* display: flex; */
+          justify-content: center;
+          align-items: center;
+          color: white;
+          text-align: center;
+          text-transform: uppercase;
+          font-size: larger;
+     }
+}
+
+@media screen and (width >= 87.5em) {
+     .main {
+          font-size: larger;
+     }
+}
